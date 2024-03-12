@@ -38,6 +38,8 @@ def read_lists(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 
 @router.get("/todo/list/{list_id}/", response_model=List[TodoItemDisplay])
 def read_todo_list(list_id:int, skip: int = 0, limit: int = 50, db: Session = Depends(get_db)):
+    ''' Return todo list view by list_id. 
+    '''
     todo_list = db.query(TodoList).filter(TodoList.id == list_id).first()
     if not todo_list:
         raise HTTPException(status_code=404, detail="Todo list not found")
