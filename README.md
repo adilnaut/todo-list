@@ -61,7 +61,7 @@ docker-compose exec web pytest
 
 
 
-## CI/CD with GitHub Actions
+## CI/CD with GitHub Actions (Work in Progress - consider it as a separate experimental branch) 
 
 This repository is configured with GitHub Actions for continuous integration and deployment.
 
