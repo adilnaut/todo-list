@@ -10,13 +10,14 @@ services:
     depends_on:
       - db
     environment:
+
       DATABASE_URL: postgresql://todolist_user:1234@db:5432/tododb
 
   db:
     image: postgres:latest
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    environment:
+    environment:    
       POSTGRES_USER: todolist_user
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: tododb
