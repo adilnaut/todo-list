@@ -1,9 +1,9 @@
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from app.main import app
-from app.db.database import Base, get_db
-from app.models.models import TodoList, TodoItem
+from ..app.main import app
+from ..app.db.database import Base, get_db
+from ..app.models.models import TodoList, TodoItem
 
 SQLALCHEMY_DATABASE_URL = os.getenv('TEST_DATABASE_URL')
 
