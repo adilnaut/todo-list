@@ -8,6 +8,57 @@ A RESTful API to create and manage TODO lists with FastAPI, PostgreSQL, Docker, 
 - Add TODO items with optional deadlines.
 - View TODO lists and items.
 - [TODO] Search TODO lists with case-insensitive text.
+- 
+## How to Use
+
+1. Create a Todo List
+This example creates a new todo list with the name "Grocery Shopping" and includes two items in the list.
+
+```
+curl -X 'POST' \
+  'http://localhost:8000/todo/list/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "name": "Grocery Shopping",
+  "items": [
+    {
+      "title": "Buy milk",
+      "deadline": "2024-04-01T09:00:00"
+    },
+    {
+      "title": "Buy eggs",
+      "deadline": "2024-04-01T10:00:00"
+    }
+  ]
+}'
+
+```
+
+3. Read a Specific Todo List
+This retrieves the items of a specific todo list by its list_id. Replace :list_id with the actual ID of the list you want to retrieve.
+
+```
+curl -X 'GET' \
+  'http://localhost:8000/todo/list/:list_id/' \
+  -H 'accept: application/json'
+```
+
+4. Add an Item to a Todo List
+This adds a new item to an existing todo list. Replace :list_id with the ID of the list you want to add an item to.
+
+```
+curl -X 'POST' \
+  'http://localhost:8000/todo/list/:list_id/item/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "title": "Buy bread",
+  "deadline": "2024-04-02T12:00:00"
+}'
+```
+
+
 
 ## Prerequisites
 
