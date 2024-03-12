@@ -31,12 +31,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Setup SSH Agent
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
-        passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
+    - name: Print working directory
+      run: pwd
     - name: Deploy to server
       uses: appleboy/ssh-action@master
       with:
