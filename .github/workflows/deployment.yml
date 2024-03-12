@@ -31,8 +31,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: Print working directory
-      run: ls -l
+    # - name: Pull docker image 
+    #   run: docker pull adilnaut/todo-list:latest
     - name: Deploy to server
       uses: appleboy/ssh-action@master
       with:
@@ -40,7 +40,7 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
-          docker pull adilnaut/todo-list:latest
-          ls -l
-          cd todo-list
+          # docker pull adilnaut/todo-list:latest
+          # ls -l
+          # cd todo-list
           docker-compose up -d
