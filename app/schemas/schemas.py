@@ -17,7 +17,7 @@ class TodoItemDisplay(TodoItemBase):
 
     # for proper de-serialization
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class TodoListBase(BaseModel):
     name: str
@@ -32,7 +32,7 @@ class TodoListDisplay(TodoListBase):
 
     # for proper de-serialization
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class TodoListNameUpdate(BaseModel):
     name: str

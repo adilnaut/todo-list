@@ -2,6 +2,7 @@ import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 def create_database(dbname, user, password, host='localhost', port='5433'):
+    """This script is needed for un-containerized env."""
     # Connection string to connect to the default database
     conn_string = f"dbname='postgres' user='{user}' host='{host}' password='{password}' port='{port}'"
     print(conn_string)

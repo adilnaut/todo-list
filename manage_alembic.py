@@ -23,6 +23,6 @@ def alembic_revision(message="create initial tables", autogenerate=True):
     command.revision(config, message=message, autogenerate=autogenerate)
 
 if __name__ == "__main__":
-    # Example usage: Create a new revision and upgrade to it
+    # pass proper migration comment
     alembic_revision("Initial database setup", autogenerate=True)
     alembic_upgrade_to_head()
