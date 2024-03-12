@@ -12,16 +12,25 @@ services:
     environment:
 
       DATABASE_URL: postgresql://todolist_user:1234@db:5432/tododb
+      TEST_DATABASE_URL: postgresql://todolist_user:1234@db:5432/test_tododb
 
   db:
     image: postgres:latest
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    environment:    
+    # TODO: for prod set up env file 
+    environment:
       POSTGRES_USER: todolist_user
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: tododb
-
+  test_db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: todolist_user
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: test_tododb
 
 volumes:
   postgres_data:
