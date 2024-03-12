@@ -118,7 +118,7 @@ This repository is configured with GitHub Actions for continuous integration and
 
 ### Continuous Integration
 
-On every push, the `.github/workflows/python-application.yml` workflow is triggered to install dependencies, run tests, and ensure the code meets our standards.
+On every push, the `.github/workflows/python-application.yml` workflow is triggered to install dependencies, run tests.
 
 ### Deployment to Production
 
