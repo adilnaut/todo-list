@@ -28,7 +28,7 @@ app.dependency_overrides[get_db] = override_get_db
 client = TestClient(app)
 
 def test_create_todo_list():
-    response = client.post("/todo/list/", json={"name": "Test List", "items": [{"title": "Test Item", "deadline": None}]})
+    response = client.post("/todo/list/", json={"name": "Test List", "items": [{"title": "Test Item"}]})
     assert response.status_code == 200
     data = response.json()
     assert data["name"] == "Test List"
